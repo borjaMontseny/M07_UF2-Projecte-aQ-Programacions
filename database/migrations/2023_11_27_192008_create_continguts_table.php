@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('conginguts', function (Blueprint $table) {
+        Schema::create('continguts', function (Blueprint $table) {
             $table->id();
+            $table->string('contingut');
+            $table->foreignId('ra_id')->constrained();
             $table->timestamps();
         });
     }

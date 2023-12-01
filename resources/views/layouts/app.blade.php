@@ -34,7 +34,8 @@
 
             <!-- Page Content -->
             <main>
-                {{ $slot }}
+                @section('content');
+                @show
             </main>
         </div>
 
