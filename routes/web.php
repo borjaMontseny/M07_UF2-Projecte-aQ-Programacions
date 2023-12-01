@@ -2,9 +2,10 @@
 
 use App\Http\Controllers\ModulController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProgramacionController;
 
 /*
-|--------------------------------------------------------------------------
+|----------crear de los demas controllers, importar----------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -29,3 +30,9 @@ Route::middleware([
 });
 
 Route::resource('/moduls', ModulController::class);
+Route::resource('/ufs', UfController::class);
+Route::resource('/ras', RaController::class);
+Route::resource('/criteris', CriteriController::class);
+Route::resource('/continguts', ContingutController::class);
+Route::resource('/programacions', ProgramacionController::class);
+Route::resource('/activitats', ActivitatController::class);
