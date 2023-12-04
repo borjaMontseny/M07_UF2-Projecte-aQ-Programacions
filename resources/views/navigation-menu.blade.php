@@ -16,6 +16,41 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('moduls.index') }}" :active="request()->routeIs('moduls')">
+                        {{ __('Moduls') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('ufs.index') }}" :active="request()->routeIs('uf')">
+                        {{ __('Ufs') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('ras.index') }}" :active="request()->routeIs('ras')">
+                        {{ __('Ras') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('continguts.index') }}" :active="request()->routeIs('continguts')">
+                        {{ __('Continguts') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('activitats.index') }}" :active="request()->routeIs('activitats')">
+                        {{ __('Activitats') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('criteris.index') }}" :active="request()->routeIs('criteris')">
+                        {{ __('Criteris') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('programacions.index') }}" :active="request()->routeIs('programacions')">
+                        {{ __('Programacions') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">

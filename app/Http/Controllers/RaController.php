@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ra;
+use App\Models\Uf;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +33,8 @@ class RaController extends Controller
     public function create()
     {
         $ra = new Ra();
-        return view('ra.create', compact('ra'));
+        $ufs = Uf::all(); // Obtiene todos los ufs
+        return view('ra.create', compact('ra', 'ufs')); // Pasa los ufs y ra a la vista
     }
 
     /**

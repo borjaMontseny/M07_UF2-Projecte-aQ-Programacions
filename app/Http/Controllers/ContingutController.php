@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contingut;
+use App\Models\Ra;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +33,8 @@ class ContingutController extends Controller
     public function create()
     {
         $contingut = new Contingut();
-        return view('contingut.create', compact('contingut'));
+        $ras = Ra::all(); // Obtiene todos los ras
+        return view('contingut.create', compact('contingut', 'ras')); // Pasa los ras y contingut a la vista
     }
 
     /**

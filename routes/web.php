@@ -1,8 +1,14 @@
 <?php
 
-use App\Http\Controllers\ModulController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ModulController;
+use App\Http\Controllers\ActivitatController;
 use App\Http\Controllers\ProgramacionController;
+use App\Http\Controllers\UfController;
+use App\Http\Controllers\RaController;
+use App\Http\Controllers\ContingutController;
+use App\Http\Controllers\CriteriController;
+
 
 /*
 |----------crear de los demas controllers, importar----------------------------------------------------------------
@@ -16,7 +22,7 @@ use App\Http\Controllers\ProgramacionController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::middleware([

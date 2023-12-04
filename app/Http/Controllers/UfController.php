@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Uf;
+use App\Models\Modul;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +33,8 @@ class UfController extends Controller
     public function create()
     {
         $uf = new Uf();
-        return view('uf.create', compact('uf'));
+        $moduls = Modul::all(); // Obtiene todos los moduls
+        return view('uf.create', compact('uf', 'moduls')); // Pasa los moduls y uf a la vista
     }
 
     /**
