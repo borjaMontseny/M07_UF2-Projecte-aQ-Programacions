@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activitat;
+use App\Models\Modul;
+use App\Models\UF;
+use App\Models\RA;
+use App\Models\Criteri;
+use App\Models\Contingut;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +37,13 @@ class ActivitatController extends Controller
     public function create()
     {
         $activitat = new Activitat();
-        return view('activitat.create', compact('activitat'));
+        $moduls = Modul::all(); // Obtiene todos los módulos
+        $ufs = UF::all(); // Obtiene todas las UFs
+        $ras = RA::all(); // Obtiene todas las RAs
+        $criteris = Criteri::all(); // Obtiene todos los Criteris
+        $continguts = Contingut::all(); // Obtiene todos los Continguts
+
+        return view('activitat.create', compact('activitat', 'moduls', 'ufs', 'ras', 'criteris', 'continguts'));
     }
 
     /**

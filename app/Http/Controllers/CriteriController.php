@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Criteri;
+use App\Models\Ra;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +33,8 @@ class CriteriController extends Controller
     public function create()
     {
         $criteri = new Criteri();
-        return view('criteri.create', compact('criteri'));
+        $ras = Ra::all(); // Obtener todos los ras
+        return view('criteri.create', compact('criteri', 'ras'));
     }
 
     /**

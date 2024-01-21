@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\Modul;
 use Illuminate\Http\Request;
 
@@ -105,5 +106,11 @@ class ModulController extends Controller
 
         return redirect()->route('moduls.index')
             ->with('success', 'Modul deleted successfully');
+    }
+
+    public function obtenerUfs($modulId)
+    {
+        $ufs = DB::table('ufs')->where('modul_id', $modulId)->pluck('name', 'id');
+        return view('modul.ufs', compact('ufs'));
     }
 }

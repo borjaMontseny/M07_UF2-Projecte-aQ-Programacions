@@ -37,7 +37,7 @@
                                         <th>No</th>
                                         
 										<th>Any</th>
-										<th>Modul Id</th>
+										<th>Mòdul</th>
 										<th>User Id</th>
 
                                         <th></th>
@@ -49,8 +49,8 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $programacion->any }}</td>
-											<td>{{ $programacion->modul_id }}</td>
-											<td>{{ $programacion->user_id }}</td>
+											<td>{{ $programacion->modul->name }}</td>
+											<td>{{ $programacion->user->name }}</td>
 
                                             <td>
                                                 <form action="{{ route('programacions.destroy',$programacion->id) }}" method="POST">

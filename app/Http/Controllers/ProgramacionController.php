@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Programacion;
 use Illuminate\Http\Request;
+use App\Models\Modul;
 
 /**
  * Class ProgramacionController
@@ -32,7 +33,8 @@ class ProgramacionController extends Controller
     public function create()
     {
         $programacion = new Programacion();
-        return view('programacion.create', compact('programacion'));
+        $moduls = Modul::all();
+        return view('programacion.create', compact('programacion', 'moduls'));
     }
 
     /**
