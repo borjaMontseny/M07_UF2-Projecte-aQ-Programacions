@@ -37,7 +37,7 @@
                                         <th>No</th>
                                         
 										<th>Criteri</th>
-										<th>Ra Id</th>
+										<th>Resultat d'Aprenentatge</th>
 
                                         <th></th>
                                     </tr>
@@ -48,7 +48,7 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $criteri->criteri }}</td>
-											<td>{{ $criteri->ra_id }}</td>
+											<td>{{ $criteri->ra->name }}</td>
 
                                             <td>
                                                 <form action="{{ route('criteris.destroy',$criteri->id) }}" method="POST">

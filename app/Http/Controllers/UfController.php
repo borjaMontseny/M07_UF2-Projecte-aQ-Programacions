@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\Uf;
 use App\Models\Modul;
 use Illuminate\Http\Request;
@@ -107,5 +108,11 @@ class UfController extends Controller
 
         return redirect()->route('ufs.index')
             ->with('success', 'Uf deleted successfully');
+    }
+
+    public function obtenerRas($ufId)
+    {
+        $ras = DB::table('ras')->where('uf_id', $ufId)->pluck('name', 'id');
+        return view('uf.ras', compact('ras'));
     }
 }

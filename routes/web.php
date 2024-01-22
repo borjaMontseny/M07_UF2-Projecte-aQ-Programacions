@@ -22,6 +22,9 @@ use App\Http\Controllers\CriteriController;
 */
 
 Route::get('/obtener-ufs/{modulId}', [ModulController::class, 'obtenerUfs']);
+Route::get('/obtener-ras/{ufId}', [UfController::class, 'obtenerRas']);
+Route::get('/obtener-criteris/{raId}', [CriteriController::class, 'obtenerCriteris']);
+
 
 Route::get('/', function () {
     return view('auth.login');

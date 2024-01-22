@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\Criteri;
 use App\Models\Ra;
 use Illuminate\Http\Request;
@@ -35,6 +36,11 @@ class CriteriController extends Controller
         $criteri = new Criteri();
         $ras = Ra::all(); // Obtener todos los ras
         return view('criteri.create', compact('criteri', 'ras'));
+    }
+    public function obtenerCriteris($raId)
+    {
+        $criteris = DB::table('criteris')->where('ra_id', $raId)->pluck('name', 'id');
+        return view('criteri.criteris', compact('criteris'));
     }
 
     /**

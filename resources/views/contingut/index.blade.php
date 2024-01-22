@@ -37,7 +37,7 @@
                                         <th>No</th>
                                         
 										<th>Contingut</th>
-										<th>Ra Id</th>
+										<th>Resultat d'Aprenentatge</th>
 
                                         <th></th>
                                     </tr>
@@ -48,7 +48,7 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $contingut->contingut }}</td>
-											<td>{{ $contingut->ra_id }}</td>
+											<td>{{ $contingut->ra->name }}</td>
 
                                             <td>
                                                 <form action="{{ route('continguts.destroy',$contingut->id) }}" method="POST">
